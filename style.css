@@ -1,0 +1,141 @@
+.main {
+	margin-top: 150px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+}
+
+.topLine,
+.bottomnLine {
+	position: relative;
+	background-color: #121233;
+	width: 180px;
+	height: 30px;
+	border-radius: 30px;
+	border: 10px solid white;
+	z-index: 2;
+}
+
+.topLine {
+	top: 40px;
+}
+
+.bottomnLine {
+	top: -40px;
+}
+
+.sandClock {
+	position: relative;
+	width: 100px;
+	height: 220px;
+	animation: spinClock 3s ease-in-out 0s infinite;
+	overflow: hidden;
+}
+
+.topGlass,
+.bottomnGlass {
+	content: "";
+	position: absolute;
+	width: 60px;
+	height: 60px;
+	border: 20px solid #1b1b58;
+	border-radius: 60px 0 60px 60px;
+	background-color: #121233;
+	transform: rotate(-45deg);
+	overflow: hidden;
+}
+
+.topGlass {
+	bottom: 0;
+	left: 0;
+}
+
+.bottomnGlass {
+	border-radius: 60px 60px 60px 0;
+}
+
+.topSand,
+.bottomnSand {
+	position: relative;
+	background-color: #7361c7;
+	width: 60px;
+	height: 80px;
+	transform: rotate(-45deg);
+}
+
+.topSand {
+	animation: topSandAnimation 3s linear 0s infinite;
+}
+
+.bottomnSand {
+	animation: bottomnSandAnimation 3s linear 0s infinite;
+}
+
+@keyframes spinClock {
+	0% {
+		transform: rotate(0deg);
+	}
+
+	50% {
+		transform: rotate(180deg);
+	}
+
+	100% {
+		transform: rotate(360deg);
+	}
+}
+
+@keyframes topSandAnimation {
+	0% {
+		top: -25px;
+		left: 15px;
+	}
+
+	25% {
+		top: -55px;
+		left: 45px;
+	}
+
+	50% {
+		top: -70px;
+		left: 55px;
+	}
+
+	75% {
+		top: -55px;
+		left: 45px;
+	}
+
+	100% {
+		top: -25px;
+		left: 15px;
+	}
+}
+
+@keyframes bottomnSandAnimation {
+	0% {
+		top: 30px;
+		left: -70px;
+	}
+
+	25% {
+		top: 20px;
+		left: -30px;
+	}
+
+	50% {
+		top: 5px;
+		left: -15px;
+	}
+
+	75% {
+		top: 20px;
+		left: -30px;
+	}
+
+	100% {
+		top: 45px;
+		left: -70px;
+	}
+}
